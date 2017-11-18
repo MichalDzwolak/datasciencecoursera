@@ -1,0 +1,26 @@
+---
+title: "MyMap"
+author: "Michal Dzwolak"
+date: "November 18, 2017"
+output: html_document
+---
+
+#My HTML document with a map created in Leaflet
+
+###Thanks for watching and grading!
+
+###*CHeers!*
+
+```{r}
+library(leaflet)
+
+df = data.frame(col = c("blue", "red", "green"), lat= c(54.040683,56.69968,50.932123), lng=c(19.080505,12.925415,4.509888))
+
+df %>% 
+  leaflet() %>% addTiles() %>%
+    addLegend(colors = c("blue", "red", "green"), labels = c("My hometown", "My study town", "I live here!")) %>%
+    addCircleMarkers(color = df$col)
+    
+
+
+```
